@@ -15,6 +15,14 @@ class Doctor
     Appointment.new(patient, self, date)
   end
   
-  
+   def appointments
+   Appointment.all.select do |s| 
+     s.doctor == self
+   end
+ end
+ 
+ def genres
+   self.songs.collect {|s| s.genre}
+ end
   
 end
