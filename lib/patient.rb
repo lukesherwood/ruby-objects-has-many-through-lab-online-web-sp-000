@@ -1,3 +1,4 @@
+require 'pry'
 class Patient
   attr_accessor :name
   
@@ -17,6 +18,7 @@ class Patient
   end
   
   def appointments
+    binding.pry
    Appointment.all.select do |s| 
      s.patient == self
    end
